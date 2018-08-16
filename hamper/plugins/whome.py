@@ -3,7 +3,7 @@ import random
 from hamper.interfaces import ChatPlugin
 from hamper.utils import ude
 
-from whome.txt import *
+from whometxt import *
 
 def art(noun):
         if noun[0] in ['a', 'e', 'i', 'o', 'u', 'y']:

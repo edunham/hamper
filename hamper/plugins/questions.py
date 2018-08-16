@@ -6,7 +6,7 @@ import re
 from hamper.interfaces import ChatCommandPlugin, ChatPlugin, Command
 from hamper.utils import ude
 
-from questions.txt import *
+from questionstxt import *
 
 class YesNoPlugin(ChatPlugin):
 

@@ -3,7 +3,7 @@ import random
 from hamper.interfaces import ChatPlugin
 from hamper.utils import ude
 
-from platitudes.txt import *
+from platitudestxt import *
 
 class PlatitudesPlugin(ChatPlugin):
     """If you can't say something nice, don't say anything at all."""

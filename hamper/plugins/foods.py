@@ -3,7 +3,7 @@ import random
 from hamper.interfaces import ChatPlugin
 from hamper.utils import ude
 
-from foods.txt import *
+from foodstxt import *
 
 class FoodsPlugin(ChatPlugin):
     """Even robots can get peckish"""
