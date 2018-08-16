@@ -51,7 +51,7 @@ class WhoMePlugin(ChatPlugin):
         return "no YOU'RE " + art(prefix) + punc()
 
     def repd(self, prefix):
-        return "Who me, a " + art(prefix) "?"
+        return "Who me, a " + art(prefix) + "?"
 
     def whomereply(self, bot, comm, prefix):
         resp = random.choice([repa, repb, repc, repd])()
