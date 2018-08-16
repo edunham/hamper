@@ -24,14 +24,14 @@ class YesNoPlugin(ChatPlugin):
         """
 
         # responses came from questions.txt
-
-        responses += [(i.strip(), 'eq') for i in affirmatives]
-        responses += [(i.strip(), 'eq') for i in negatories]
+        resps = responses
+        resps += [(i.strip(), 'eq') for i in affirmatives]
+        resps += [(i.strip(), 'eq') for i in negatories]
         self.advices = [(x, 1) for x in obliques]
         total_prob = 0
         real_resp = []
         evens = []
-        for resp, prob in responses:
+        for resp, prob in resps:
             if isinstance(prob, str):
                 if prob.startswith('eq'):
                     sp = prob.split('/')
@@ -51,7 +51,7 @@ class YesNoPlugin(ChatPlugin):
         for resp, divisor in evens:
             real_resp.append((resp, share * divisor))
 
-        self.responses = real_resp
+        self.resps = real_resp
         self.is_question = re.compile('.*\?(\?|!)*$')
 
     def shouldq(self, bot, comm):
@@ -144,7 +144,7 @@ class YesNoPlugin(ChatPlugin):
                 bot.reply(comm, '{0}: {1}'.format(comm['user'], whatsay))
             else:
                 r = random.random()
-                replies = self.responses
+                replies = self.resps
                 for resp, prob in replies:
                     r -= prob
                     if r < 0:
