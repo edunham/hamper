@@ -5,7 +5,6 @@ from hamper.utils import ude
 
 from foods.txt import *
 
-
 class FoodsPlugin(ChatPlugin):
     """Even robots can get peckish"""
 
