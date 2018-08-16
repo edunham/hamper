@@ -48,7 +48,7 @@ setup(
             'timez = hamper.plugins.timez:Timez',
             'tinyurl = hamper.plugins.tinyurl:Tinyurl',
             'whatwasthat = hamper.plugins.whatwasthat:WhatWasThat',
-            'whome = hamper.plugins.whome:WhoMe',
+            'whome = hamper.plugins.whome:WhoMePlugin',
             'yesno = hamper.plugins.questions:YesNoPlugin',
         ],
     },
