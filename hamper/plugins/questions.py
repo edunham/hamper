@@ -68,6 +68,22 @@ class YesNoPlugin(ChatPlugin):
         return "a " + noun
 
     def canq(self, bot, comm):
+			"""
+			<@person> hamper: pls remind me that i cannot just go around buying tubas kthx
+			<hamper> I share your pain.
+			<@human> hamper: can person just go around buying tubas?
+			<hamper> human: Perhaps try with a false blade and a tongue.
+			<@human> hamper: can person just go around buying tubas with a false blade and a tongue?
+			<hamper> human: Yes, you'll need a scissors?
+			<@human> hamper: can person just go around buying tubas with a false blade, a tongue, and scissors?
+			<hamper> human: Nope, there's too much of a spade...
+			<@human> hamper: can person just go around buying tubas with a false blade, a tongue, and scissors, but without a spade?
+			<hamper> human: Maybe if you had a hollow square?
+			<@human> hamper: can person just go around buying tubas with a false blade, a tongue, and scissors, but without a spade, but with a hollow square?
+			<hamper> human: Yes, but watch out for a regular floor and a sponge.
+			<@person> you found the feature!
+			"""
+
         resp = random.choice(canstarts)
         resp += self.articleize(random.choice(nouns))
         if random.random() < .5:
