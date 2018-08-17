@@ -17,15 +17,20 @@ class WhoMePlugin(ChatPlugin):
     """ What someone said, and how it harmed you
         Something you did, that failed to be charming """
     name = 'whome'
-    priority = 100 
+    priority = 100
 
     def setup(self, *args):
         pass
 
     def discusses_me(self, msg):
-        for w in whome:
-            if w in msg:
-                return w
+        founds = []
+        parts = msg.translate(None, string.punctuation).split()
+        for p in parts:
+            if p in whome:
+                founds.append(p)
+        if len(founds)>0:
+            return random.choice(founds)
+        return False
 
     def repa(self, prefix):
         out = prefix + "? "                         # vile?
