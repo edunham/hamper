@@ -87,11 +87,14 @@ class YesNoPlugin(ChatPlugin):
         quantifiers = ['many', 'much']
         for q in quantifiers:
             if q in msg:
-                idx = parts.index(q)
-                for i in range(idx, len(parts)):
-                    if len(parts[i]) > 4:
-                        # Let's pretend to plural.
-                        return parts[i].rstrip('s') + 's'
+                try:
+                    idx = parts.index(q)
+                    for i in range(idx, len(parts)):
+                        if len(parts[i]) > 4:
+                            # Let's pretend to plural.
+                            return parts[i].rstrip('s') + 's'
+                except ValueError:
+                    return random.choice(['it','them','that'])
         return None
 
     def howmany(self, bot, comm, msg):
