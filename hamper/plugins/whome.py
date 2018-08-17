@@ -1,4 +1,5 @@
 import random
+import string
 
 from hamper.interfaces import ChatPlugin
 from hamper.utils import ude

@@ -2,6 +2,7 @@
 
 import random
 import re
+import string
 
 from hamper.interfaces import ChatCommandPlugin, ChatPlugin, Command
 from hamper.utils import ude
