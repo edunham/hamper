@@ -83,7 +83,7 @@ class YesNoPlugin(ChatPlugin):
         return x + " to " + y
 
     def manything(self, msg):
-        parts = msg.split()
+        parts = msg.translate(None, string.punctuation).split()
         quantifiers = ['many', 'much']
         for q in quantifiers:
             if q in msg:
@@ -94,7 +94,7 @@ class YesNoPlugin(ChatPlugin):
                             # Let's pretend to plural.
                             return parts[i].rstrip('s') + 's'
                 except ValueError:
-                    return random.choice(['it','them','that'])
+                    return "of " + random.choice(['it','them','that'])
         return None
 
     def howmany(self, bot, comm, msg):
