@@ -84,7 +84,8 @@ class YesNoPlugin(ChatPlugin):
         return x + " to " + y
 
     def manything(self, msg):
-        parts = msg.translate(None, string.punctuation).split()
+        parts = str(msg).translate(None, string.punctuation)
+        parts = parts.split()
         quantifiers = ['many', 'much']
         for q in quantifiers:
             if q in msg:

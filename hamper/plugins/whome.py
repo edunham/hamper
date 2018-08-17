@@ -25,7 +25,7 @@ class WhoMePlugin(ChatPlugin):
 
     def discusses_me(self, msg):
         founds = []
-        parts = msg.translate(None, string.punctuation).split()
+        parts = str(msg).translate(None, string.punctuation).split()
         for p in parts:
             if p.lower() in whome:
                 founds.append(p)
