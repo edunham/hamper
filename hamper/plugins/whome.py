@@ -26,7 +26,7 @@ class WhoMePlugin(ChatPlugin):
         founds = []
         parts = msg.translate(None, string.punctuation).split()
         for p in parts:
-            if p in whome:
+            if p.lower() in whome:
                 founds.append(p)
         if len(founds)>0:
             return random.choice(founds)
