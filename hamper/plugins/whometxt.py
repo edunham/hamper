@@ -1,36 +1,36 @@
 whome = [
-    "toaster",
-    "silly",
-    "robot",
-    "dummy",
-    "jerk",
-    "vile",
-    "vicious",
     "barbaric",
+    "dummy",
     "failure",
+    "jerk",
+    "robot",
+    "silly",
     "terrible",
+    "toaster",
+    "vicious",
+    "vile",
 ]
 
 mopes = [
     "aww",
-    "gosh",
-    "gee",
-    "golly",
     "bother",
     "darn",
     "drat",
+    "gee",
+    "golly",
+    "gosh",
     "sorry",
     "well",
 ]
 
 bigs = [
+    "big",
+    "enormous",
+    "great",
     "huge",
     "large",
-    "big",
     "massive",
-    "enormous",
     "quite the",
-    "great",
     "real",
 ]
 
