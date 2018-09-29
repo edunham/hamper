@@ -22,6 +22,7 @@ log = logging.getLogger('hamper')
 def main():
     config = hamper.config.load()
     hamper.log.setup_logging()
+    wpm = config.get('wpm', 200)
 
     if config.get('ssl', False):
         reactor.connectSSL(
@@ -197,9 +198,7 @@ class CommanderProtocol(irc.IRCClient):
         if type(message) == str:
             message = message.encode('utf8')
 
-        # try typing delays over here instead
-        # Let's say the bot types at 20wpm, TODO make configurable
-        chardelay = 1.0/(20 * (5.0/60))
+        chardelay = 1.0/(wpm * (5.0/60))
         format_kwargs = {}
         format_kwargs.update(kwvars)
         format_kwargs.update(comm)
