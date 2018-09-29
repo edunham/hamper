@@ -23,6 +23,10 @@ class CLIProtocol(LineReceiver):
         self.loader = PluginLoader(config)
 
         self.history = {}
+        if 'wpm' in config:
+            self.wpm = config['wpm']
+        else:
+            wpm = 200
 
         if 'db' in config:
             print('Loading db from config: ' + config['db'])
@@ -69,8 +73,7 @@ class CLIProtocol(LineReceiver):
         self.stopProducing()
 
     def msg(self, user, message, length=None):
-        # Let's say the bot types at 40wpm, TODO make configurable
-        chardelay = 1/(40 * 5.0/60)
+        chardelay = 1/(self.wpm * 5.0/60)
         for line in message.splitlines():
             time.sleep(len(line)*chardelay)
             self._sendLine(user, line)
