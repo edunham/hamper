@@ -1,6 +1,7 @@
 from twisted.internet import reactor
 from twisted.internet.stdio import StandardIO
 from twisted.protocols.basic import LineReceiver
+import time
 
 import sqlalchemy
 from sqlalchemy import orm
@@ -68,7 +69,10 @@ class CLIProtocol(LineReceiver):
         self.stopProducing()
 
     def msg(self, user, message, length=None):
+        # Let's say the bot types at 40wpm, TODO make configurable
+        chardelay = 1/(40 * 5.0/60)
         for line in message.splitlines():
+            time.sleep(len(line)*chardelay)
             self._sendLine(user, line)
 
     def notice(self, user, message):
