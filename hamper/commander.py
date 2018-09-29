@@ -208,7 +208,7 @@ class CommanderProtocol(irc.IRCClient):
         except (ValueError, KeyError, IndexError) as e:
             log.error('Could not format message: {e}'.format(e=e))
 
-        time.sleep(len(line) * chardelay)
+        time.sleep(len(message) * chardelay)
 
         if comm['pm']:
             func(comm['user'], message)
