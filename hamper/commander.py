@@ -1,4 +1,5 @@
 import logging
+import time
 import re
 import traceback
 from collections import deque, namedtuple
@@ -194,10 +195,11 @@ class CommanderProtocol(irc.IRCClient):
 
     def _hamper_send(self, func, comm, message, encode, tag, vars, kwvars):
         if type(message) == str:
-            log.warning('Warning, passing message as ascii instead of unicode '
-                        'will cause problems. The message is: {0}'
-                        .format(message))
+            message = message.encode('utf8')
 
+        # try typing delays over here instead
+        # Let's say the bot types at 20wpm, TODO make configurable
+        chardelay = 1.0/(20 * (5.0/60))
         format_kwargs = {}
         format_kwargs.update(kwvars)
         format_kwargs.update(comm)
@@ -206,8 +208,7 @@ class CommanderProtocol(irc.IRCClient):
         except (ValueError, KeyError, IndexError) as e:
             log.error('Could not format message: {e}'.format(e=e))
 
-        if encode:
-            message = message.encode('utf8')
+        time.sleep(len(message) * chardelay)
 
         if comm['pm']:
             func(comm['user'], message)
