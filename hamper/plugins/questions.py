@@ -177,7 +177,7 @@ class YesNoPlugin(ChatPlugin):
         for b in betwords:
             if b in msg:
                 return self.betting(bot, comm)
-        if "can " in msg or "could" in msg:
+        if "can " in msg or "could" in msg or " how" in " "+msg:
             return self.canq(bot, comm)
         if "many" in msg or "much" in msg:
             # TODO handle "much" with units
