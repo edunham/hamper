@@ -17,12 +17,12 @@ import hamper.plugins
 from hamper.acl import ACL, AllowAllACL
 
 log = logging.getLogger('hamper')
-
+wpm = 200
 
 def main():
     config = hamper.config.load()
     hamper.log.setup_logging()
-    wpm = config.get('wpm', 200)
+    wpm = config.get('wpm')
 
     if config.get('ssl', False):
         reactor.connectSSL(
