@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 
 platitudes = [
+    "That's terrible.",
+    "Nobody would have guessed.",
+    "Imagine that.",
+    "Surprise, surprise, surprise!",
+    "Wait, but why?",
+    "There's no escape.",
+    "Are you even listening?",
+    "Must be new hire season",
     "Analysis without numbers is only an opinion.",
     "This is why it's a good idea to design them to operate when some things are wrong .",
     "This is true at any point in time.",
