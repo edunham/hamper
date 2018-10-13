@@ -206,7 +206,7 @@ class WhoMePlugin(ChatPlugin):
         if "##" in comm['channel']:
             # Offtopic? ANYTHING GOES
             if comm['directed']:
-                hu = hasu(msg)
+                hu = self.hasu(msg)
                 if hu:
                     self.whomereply(bot, comm, hu)
                     return True
