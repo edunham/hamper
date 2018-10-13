@@ -23,6 +23,18 @@ whome = [
     "vile",
 ]
 
+nouns = [
+    "ear",
+    "eye",
+    "dog",
+]
+
+verbs = [
+    "loving",
+    "stinking",
+    "eating",
+]
+
 mopes = [
     "aww",
     "ballocks",
