@@ -6,6 +6,7 @@ from hamper.utils import ude
 
 from whometxt import *
 
+puncs = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 
 def tyop(c):
     # typo a character
@@ -89,7 +90,7 @@ class WhoMePlugin(ChatPlugin):
 
     def discusses_me(self, msg):
         founds = []
-        parts = str(msg).translate(None, string.punctuation).split()
+        parts = str(msg).strip(puncs).split()
         for p in parts:
             if p.lower() in whome:
                 founds.append(p)
@@ -180,8 +181,7 @@ class WhoMePlugin(ChatPlugin):
 
     def hasu(self, msg):
         idx = -1
-        splat = msg.translate(None,
-                              '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~').split()
+        splat = msg.strip(puncs).split()
         if "you" in msg:
             idx = splat.index("you")
         if " u " in " " + msg + " ":
