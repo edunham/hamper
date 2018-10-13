@@ -1,3 +1,13 @@
+kb = [
+    "1234567890",
+    "qwertyuiop",
+    " asdfghjkl",
+    "  zxcvbnm "
+]
+
+digs = "`1234567890-=[]\\;',./"
+updigs = "~!@#$%^&*()_+{}|:\"<>?"
+
 whome = [
     "barbaric",
     "boot-licker",

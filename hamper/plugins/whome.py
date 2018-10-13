@@ -5,21 +5,13 @@ from hamper.interfaces import ChatPlugin
 from hamper.utils import ude
 
 from whometxt import *
+puncs = digs + updigs
 
-puncs = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 
 def tyop(c):
     # typo a character
     if " " in c:
         return " "
-    kb = [
-        "1234567890",  # row 0
-        "qwertyuiop",  # row 1
-        " asdfghjkl",  # row 2
-        "  zxcvbnm "
-    ]  # row 3
-    digs = "`1234567890-=[]\\;',./"
-    updigs = "~!@#$%^&*()_+{}|:\"<>?"
     x = -1
     y = -1
     for row in kb:
