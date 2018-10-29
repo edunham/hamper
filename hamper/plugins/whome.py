@@ -175,7 +175,7 @@ class WhoMePlugin(ChatPlugin):
     def hasu(self, msg):
         idx = -1
         splat = msg.strip(puncs).split()
-        if "you" in msg:
+        if " you " in msg:
             idx = splat.index("you")
         if " u " in " " + msg + " ":
             idx = splat.index("u")
