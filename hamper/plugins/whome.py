@@ -7,6 +7,7 @@ from hamper.utils import ude
 from whometxt import *
 puncs = digs + updigs
 
+THRESH = .01
 
 def tyop(c):
     # typo a character
@@ -20,13 +21,13 @@ def tyop(c):
             x = row.index(c)
 
     if y >= 0 and x >= 0:
-        if y != 3 and random.random() < .2:
+        if y != 3 and random.random() < THRESH:
             y += 1
-        if y != 0 and random.random() < .2:
+        if y != 0 and random.random() < THRESH:
             y -= 1
-        if x != 9 and random.random() < .2:
+        if x != 9 and random.random() < THRESH:
             x += 1
-        if x != 0 and random.random() < .2:
+        if x != 0 and random.random() < THRESH:
             x -= 1
         return kb[y][x]
     if c in digs:
