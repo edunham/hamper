@@ -185,6 +185,10 @@ class WhoMePlugin(ChatPlugin):
                 if idx >= 1:
                     return splat[idx - 1]
                 return random.choice(whome)
+            if splat[idx + 1] == "a" or splat[idx + 1] == "an":
+                idx += 1
+                if idx == len(splat) - 1:
+                    return random.choice(whome)
             if splat[idx + 1].endswith("ing"):
                 # "you(0) bleeping(1)!", idx=0, len=2 => "bleeper"
                 if len(splat) == idx + 2:
