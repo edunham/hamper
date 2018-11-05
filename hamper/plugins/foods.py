@@ -1,7 +1,7 @@
 import random
 
 from hamper.interfaces import ChatPlugin
-from hamper.utils import ude
+import hamper.utils
 
 from foodstxt import *
 
@@ -17,9 +17,7 @@ class FoodsPlugin(ChatPlugin):
     def articleize(self, noun):
         if random.random() < .3:
             noun = random.choice(foodunits) + " of " + noun
-        if noun[0] in ['a', 'e', 'i', 'o', 'u', 'y']:
-            return "an " + noun
-        return "a " + noun
+        return art(noun)
 
     def discusses_food(self, msg):
         for d in discussors:

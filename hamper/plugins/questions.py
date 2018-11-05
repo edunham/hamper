@@ -5,7 +5,7 @@ import re
 import string
 
 from hamper.interfaces import ChatCommandPlugin, ChatPlugin, Command
-from hamper.utils import ude
+import hamper.utils
 
 from questionstxt import *
 
@@ -63,9 +63,7 @@ class YesNoPlugin(ChatPlugin):
     def articleize(self, noun):
         if random.random() < .3:
             noun = random.choice(adjs) + ' ' + noun
-        if noun[0] in ['a', 'e', 'i', 'o', 'u', 'y']:
-            return "an " + noun
-        return "a " + noun
+        return art(noun)
 
     def canq(self, bot, comm):
         """

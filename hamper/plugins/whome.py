@@ -2,7 +2,7 @@ import random
 import string
 
 from hamper.interfaces import ChatPlugin
-from hamper.utils import ude
+import hamper.utils
 
 from whometxt import *
 puncs = digs + updigs
@@ -54,14 +54,6 @@ def spin(phrase):
             om = mood - thresh
         mood = om
     return out
-
-
-def art(noun):
-    noun = str(noun)
-    if noun[0] in ['a', 'e', 'i', 'o', 'u', 'y']:
-        return "an " + noun
-    return "a " + noun
-
 
 def punc():
     return random.choice(['.', '...', '!', '?'])
