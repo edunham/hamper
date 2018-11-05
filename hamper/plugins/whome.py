@@ -136,8 +136,8 @@ class WhoMePlugin(ChatPlugin):
             # why you hat-wearing food-eater
         if random.random() < .5:
             if random.random() < .5:
-                out += " you " + random.choice("oughtta", "go and", "go",
-                                               "better")
+                out += " you " + random.choice(("oughtta", "go and", "go",
+                                               "better"))
                 # why you hat-wearing food-eater you better
             out += " " + random.choice(verbs)
             # why you hat-wearing food-eater stinking OR
