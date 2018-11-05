@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+
+sleepfacts = [
+    "Sleep keeps your heart healthy",
+    "Sleep may help prevent cancer",
+    "Sleep reduces stress",
+    "Sleep reduces inflammation",
+    "Sleep makes you more alert",
+    "Sleep improves your memory",
+    "Sleep may help you lose weight",
+    "Napping makes you smarter",
+    "Sleep may reduce your risk of depression",
+    "Sleep helps the body repair itself",
+    "When you're tired, you can't function at your best",
+    "Sleep helps you think more clearly, have quicker reflexes and focus better",
+    "Loss of sleep impairs your higher levels of reasoning, problem-solving and attention to detail",
+    "Sleep affects growth and stress hormones, our immune system, appetite, breathing, blood pressure and cardiovascular health",
+    "Lack of sleep increases the risk for obesity, heart disease and infections",
+    "Well-rested people who received the flu vaccine developed stronger protection against the illness",
+    "A good night’s sleep consists of 4 to 5 sleep cycles",
+    "Adults need 7 to 9 hours of sleep per night",
+    "To attain the maximum restorative benefits of sleep, getting a full night of quality sleep is important",
+    "Distractions such as electronics—especially the light from TVs, cell phones, tablets and e-readers—can prevent you from falling asleep",
+    "Anxiety about falling asleep often makes the condition worse",
+    "Common therapies for insomnia include relaxation and deep-breathing techniques",
+    ]
+discussors = [
+    "sleep",    
+    "nap",    
+    "snooze",    
+    "dream",    
+    "slumber",    
+    "doze",
+    "siesta",
+    ]
