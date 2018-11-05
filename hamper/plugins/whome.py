@@ -57,6 +57,7 @@ def spin(phrase):
 
 
 def art(noun):
+    noun = str(noun)
     if noun[0] in ['a', 'e', 'i', 'o', 'u', 'y']:
         return "an " + noun
     return "a " + noun
@@ -144,6 +145,7 @@ class WhoMePlugin(ChatPlugin):
             # why you hat-wearing food-eater you better stinking
             out += " " + art(self.composed)
         out += punc()
+        return out
 
     def whomereply(self, bot, comm, prefix):
         resp = random.choice([
