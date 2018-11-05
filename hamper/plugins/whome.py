@@ -94,9 +94,9 @@ class WhoMePlugin(ChatPlugin):
     def composed(self):
         # noun-verb noun-noun, thanks https://creativeswears.livejournal.com/
         ers = [inger(v) for v in verbs if v.endswith("ing")]
-        out = '-'.join(random.choice(nouns), random.choice(verbs))
+        out = '-'.join((random.choice(nouns), random.choice(verbs)))
         out += " "
-        out = '-'.join(random.choice(nouns), random.choice(nouns + ers))
+        out = '-'.join((random.choice(nouns), random.choice(nouns + ers)))
         return out
 
     def repa(self, prefix):
