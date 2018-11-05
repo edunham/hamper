@@ -26,6 +26,10 @@ sleepfacts = [
     ]
 discussors = [
     "sleep",    
+    "bed",    
+    "cot",    
+    "cradle",    
+    "crib",    
     "nap",    
     "snooze",    
     "dream",    
