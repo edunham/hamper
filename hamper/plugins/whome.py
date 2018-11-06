@@ -97,7 +97,7 @@ class WhoMePlugin(ChatPlugin):
         ers = [inger(v) for v in verbs if v.endswith("ing")]
         out = '-'.join((random.choice(nouns), random.choice(verbs)))
         out += " "
-        out = '-'.join((random.choice(nouns), random.choice(nouns + ers)))
+        out += '-'.join((random.choice(nouns), random.choice(nouns + ers)))
         return out
 
     def repa(self, prefix):
@@ -109,7 +109,7 @@ class WhoMePlugin(ChatPlugin):
         return out
 
     def repb(self, prefix):
-        out = prefix  # barbaric
+        out = str(prefix)  # barbaric
         out += "? Only " + art(random.choice(bigs))  # ? Only a massive
         out += " " + random.choice(whome) + "ing "  # failureing
         if random.random() < .5:
