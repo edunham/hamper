@@ -69,7 +69,7 @@ class WhoMePlugin(ChatPlugin):
     """ What someone said, and how it harmed you
         Something you did, that failed to be charming """
     name = 'whome'
-    priority = 100
+    priority = -1 
 
     def setup(self, *args):
         pass
@@ -89,7 +89,7 @@ class WhoMePlugin(ChatPlugin):
         ers = [inger(v) for v in verbs if v.endswith("ing")]
         out = '-'.join((random.choice(nouns), random.choice(verbs)))
         out += " "
-        out += '-'.join((random.choice(nouns), random.choice(nouns + ers)))
+        out += '-'.join((random.choice(nouns), random.choice((nouns + ers))))
         return out
 
     def repa(self, prefix):
