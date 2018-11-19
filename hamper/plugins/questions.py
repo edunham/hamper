@@ -5,7 +5,7 @@ import re
 import string
 
 from hamper.interfaces import ChatCommandPlugin, ChatPlugin, Command
-import hamper.utils
+from hamper.utils import *
 
 from questionstxt import *
 

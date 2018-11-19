@@ -1,7 +1,7 @@
 import random
 
 from hamper.interfaces import ChatPlugin
-import hamper.utils
+from hamper.utils import * 
 
 from foodstxt import *
 

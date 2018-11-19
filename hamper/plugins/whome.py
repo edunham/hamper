@@ -2,7 +2,7 @@ import random
 import string
 
 from hamper.interfaces import ChatPlugin
-import hamper.utils
+from hamper.utils import *
 
 from whometxt import *
 puncs = digs + updigs
