@@ -10,6 +10,8 @@ from hamper.commander import DB, PluginLoader
 import hamper.config
 import hamper.log
 
+SHUSHTIME = 10 # skip this many more comments if told to shut up
+shutup = 0     # How many more lines left to skip
 
 class CLIProtocol(LineReceiver):
     """
@@ -59,10 +61,14 @@ class CLIProtocol(LineReceiver):
             'directed': True,
             'pm': True,
         }
-
+        if "shut up" in line:
+            shutup += SHUSHTIME
         self.loader.runPlugins("chat", "message", self, comm)
 
     def _sendLine(self, user, message):
+        if shutup > 0:
+            shutup -= 1
+            return
         if user != "hamper":
             message = "[%s] %s" % (user, message)
         self.sendLine(message)
